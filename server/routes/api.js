@@ -1,7 +1,7 @@
 let express = require('express'),
     router = express.Router(),
     callForTender = require('./callForTender')
-    
+
 
 // GET /api/calls-for-tender/:id
 router.get('/calls-for-tender/:id', callForTender.getOne);
