@@ -3,16 +3,16 @@ let express = require('express'),
     callForTender = require('./callForTender')
 
 
-// GET /api/calls-for-tender/:id
-router.get('/calls-for-tender/:id', callForTender.getOne);
-// GET /api/calls-for-tender
-router.get('/calls-for-tender', callForTender.getAll)
-// POST /api/calls-for-tender
-router.post('/calls-for-tender', callForTender.add)
+// GET /api/projects/:id
+router.get('/projects/:id', callForTender.getOne);
+// GET /api/projects
+router.get('/projects', callForTender.getAll)
+// POST /api/projects
+router.post('/projects', callForTender.add)
 
-// GET /api/calls-for-tender/:id/offers
-router.get('/calls-for-tender/:id/offers', callForTender.getOffers);
-// GET /api/calls-for-tender/:id/offers/:id
-router.get('/calls-for-tender/:id/offers/:id', callForTender.getOffer);
+// GET /api/projects/:id/offers
+router.get('/projects/:id/offers', callForTender.getOffers);
+// GET /api/projects/:id/offers/:id
+router.get('/projects/:id/offers/:id', callForTender.getOffer);
 
 module.exports = router;
