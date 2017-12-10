@@ -8,7 +8,7 @@ var fs = require('fs');
 
 var myContract = web3.eth.contract(JSON.parse(fs.readFileSync("./../chain/contract.json", "utf8")).abi);
 var address = fs.readFileSync("./address", "utf8");
-var contractInstance = myContract.at("0xa141fecf258e5c5a8d225aabf5843425f9e584ba");
+var contractInstance = myContract.at("0x1b5b1ea5f703ec0993290c48e0e315e22f13f06f");
 
 
 
@@ -44,13 +44,24 @@ function getProject(req, res) {
 }
 
 function addProject(req, res) {
-  contractInstance.addProject.sendTransaction("2", "chaine", {
-    from: web3.eth.accounts[0]
+
+  try {
+    var password = "";
+    web3.personal.unlockAccount(web3.eth.accounts[0], password);
+  } catch (e) {
+    console.log(e);
+    return;
+  }
+  contractInstance.addProject.sendTransaction(req.body.id, req.body.data, {
+    from: web3.eth.accounts[0],
+    gas: "920000"
   }, (err, txh) => {
     console.log(err + " err");
-    console.log(txh);
+    // console.log(txh);
+    // console.log(web3.eth.getTransaction(txh));
+
   });
-  projects.push(req.body.project);
+  // projects.push(req.body.project);
   // '"{callForTender":{"deadline":"2017-11-11T12:15","offers":[{"sender":"s1","description":"First offer"},{"sender":"s2","description":"Second offer"},{"sender":"s3","description":"3rd offer"}]},"description":"Second project","deadline":"2017-12-30T00:00","affectedTo":"5","state":"Affected","expenses":"255DT Papiers, 4000DT Materiels"},'
   res.json({
     error: false,
@@ -61,9 +72,9 @@ function addProject(req, res) {
 function getOffers(req, res) {
   res.json({
     error: false,
-    data: projects.find(p => {
-      return p.id === req.params.id
-    }).callForTender.offers
+    data: JSON.parse(
+      contractInstance.getProject(req.params.id).data
+    ).callForTender.offers
   });
 }
 
