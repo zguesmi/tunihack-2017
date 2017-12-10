@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// app.use(deployContract);
+app.use(deployContract);
 app.use('/', index);
 app.use('/api', api);
 
