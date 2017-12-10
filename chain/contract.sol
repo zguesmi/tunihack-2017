@@ -18,11 +18,15 @@ contract SmartProject {
 
     struct CallForTender {
         string deadline;
-        mapping(address => string) offers;
+        /*mapping(address => string) offers;*/
     }
 
     function SmartProject() {
         owner = msg.sender;
+        CallForTender memory callForTender = CallForTender({deadline:"zied dead"});
+        Project memory project = Project({id:"project1", callForTender:callForTender,
+            description:"description test", deadline: "2015", affectedTo:address(0)});
+        projects.push(project);
     }
 
     function getProjects() constant returns (string) {
@@ -59,10 +63,9 @@ contract SmartProject {
     }
 
     function tenderToJson(CallForTender callForTender) private returns(string){
-        return "{".toSlice().concat(
-            "deadline:".toSlice()).toSlice().concat( callForTender.deadline.toSlice()).toSlice().concat(
-            ",offers:".toSlice()).toSlice().concat(
-        "}".toSlice());
+        return "{".toSlice().concat("deadline:".toSlice())
+            .toSlice().concat(callForTender.deadline.toSlice()).toSlice()
+            .concat(",offers:".toSlice()).toSlice().concat("}".toSlice());
     }
 
     function toString(address x) private returns (string) {
