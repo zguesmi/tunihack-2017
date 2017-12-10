@@ -1,11 +1,11 @@
 angular.module('MyApp')
-  .factory('Offers', function($http) {
+  .factory('Offers', function($http, BASE_API, API) {
     return {
-      get: function(id) {
-        return $http.get(BASE_API + API.projects + '/' + id);
+      getAll: function(projectId) {
+        return $http.post(BASE_API + API.projects + '/' + projectId + '/' + API.offers);
       },
-      getAll: function(pojectId, offerId) {
-        return $http.get(BASE_API + API.projects + '/' + id + '/' +API.offers);
+      add: function(projectId, offer) {
+        return $http.get(BASE_API + API.projects + '/' + projectId + '/' +API.offers, offer);
       }
     };
   });

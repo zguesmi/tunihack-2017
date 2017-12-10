@@ -1,5 +1,5 @@
 angular.module('MyApp')
-  .factory('Porjects', function($http) {
+  .factory('Projects', function($http, BASE_API, API) {
     return {
       get: function(id) {
         return $http.get(BASE_API + API.projects + '/' + id);
@@ -8,7 +8,7 @@ angular.module('MyApp')
         return $http.get(BASE_API + API.projects);
       },
       add : function(project){
-          return $http.post(BASE_API + API.projects);
+          return $http.post(BASE_API + API.projects, project);
       }
     };
   });
