@@ -1,13 +1,11 @@
 angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer'])
     // API Consts
-  .constant('BASE_API','/api')
+  .constant('BASE_API','http://localhost:3000/api')
   .constant('API',{
     projects : '/projects',
     offres : '/offres'
   })
   .config(function($stateProvider, $urlRouterProvider, $authProvider) {
-
-
     /**
      * App routes
      */

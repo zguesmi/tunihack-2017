@@ -4,7 +4,7 @@ angular.module('MyApp')
       get: function(id) {
         return $http.get(BASE_API + API.projects + '/' + id);
       },
-      getAll: function(profileData) {
+      getAll: function() {
         return $http.get(BASE_API + API.projects);
       },
       add : function(project){
