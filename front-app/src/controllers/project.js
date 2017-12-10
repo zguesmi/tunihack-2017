@@ -1,16 +1,21 @@
 angular.module('MyApp')
   .controller('ProjectCtrl', function($scope, $auth, toastr, Projects, $state) {
+
+    $scope.showForm = function () {
+      $state.go('newProject', {} );
+    };
     $scope.projects = []
     $scope.loading = true;
 
     $scope.typeProject  = "";
     // Load project list
     Projects.getAll().then((response)=>{
-      $scope.projects = response.data;
+      console.log(response.data)
+      $scope.projects = response.data.data;
       $scope.loading = false;
     },(response)=>{
       $scope.loading = false;
-      toastr.error(response.data.message);
+      toastr.error(response.data);
     });
 
     // Get formated date
@@ -21,7 +26,6 @@ angular.module('MyApp')
 
     // Update filter
     $scope.filterSelect = function(type){
-
       $scope.typeProject = type;
     }
 

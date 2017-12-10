@@ -1,8 +1,8 @@
 angular.module('MyApp')
-  .controller('LoginCtrl', function($scope, $location, $auth, toastr, $rootScope) {
+  .controller('LoginCtrl', function($scope, $location, $auth, toastr) {
     $scope.login = function() {
       if ($scope.user.email == 'admin@admin.com') {
-          $rootScope.authenticated = true;
+          localStorage.setItem('auth', 'true');
           toastr.success('You have successfully signed in!');
           $location.path('/');
       } else

@@ -1,0 +1,28 @@
+
+
+
+      <div class="container">
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading">New Offer</div>
+
+          <div class="panel-body">
+            <form method="post" ng-submit="submit()" name="offerForm">
+              <div class="form-group has-feedback">
+                <input class="form-control input-lg" type="text" name="text" ng-model="user.sender" placeholder="Sender" required autofocus>
+                <span class="ion-at form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input class="form-control input-lg" type="text" name="text" ng-model="user.description" placeholder="Description" required>
+                <span class="ion-key form-control-feedback"></span>
+              </div>
+              <button type="submit" ng-disabled="offerForm.$invalid" class="btn btn-lg  btn-block btn-success">Offer</button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>

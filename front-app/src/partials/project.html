@@ -1,4 +1,10 @@
+
+
 <div class="container">
+
+  <button type="button" class="button-add btn btn-primary btn-md" ng-click="showForm()">Add project</button
+
+
   <div class="panel panel-default">
     <div class="panel-heading">Projects</div>
     <div class="panel-body">
@@ -26,8 +32,8 @@
         </div>
         <div id="products" class="row list-group">
             <div class="item  col-xs-4 col-lg-4" ng-repeat="project in projects  | filter:typeProject">
-                <div class="thumbnail">
-                    <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                <div class="thumbnail"> <!--http://placehold.it/400x250/000/fff-->
+                    <img class="group list-group-image" src="{{project.id}}.jpg" alt="" />
                     <div class="caption">
                         <h4 class="group inner list-group-item-heading">
                             {{project.description}}</h4>

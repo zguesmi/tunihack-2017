@@ -6,9 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var api = require('./routes/api');
-var Web3 = require('web3');
-var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
-var deployContract = require('./routes/deployContract');
+
 var fs = require('fs');
 var app = express();
 app.use(logger('dev'));
@@ -17,18 +15,10 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
-
-deployContract().then((address,err) => {
-  if (err) {
-    console.log(err + "  err");
-  }
-  fs.writeFile("./address", address, function (err) {
-    if (err) {
-      return console.log(err);
-    }
-
-    console.log("The file was saved!");
-  });
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 app.use('/', index);
 app.use('/api', api);
