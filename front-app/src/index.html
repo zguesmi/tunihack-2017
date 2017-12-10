@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<html lang="en"  ng-app="myApp">
+<html ng-app="MyApp">
 <head>
-    <meta charset="UTF-8">
-    <title>Enigma</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/node_modules/angular/angular.min.js"></script>
-    <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="/node_modules/ngstorage/ngStorage.min.js"></script>
-    <script src="/node_modules/angular-growl-notifications/dist/angular-growl-notifications.js"></script>
-
-    <!-- App dep-->
-    <script src="index.js"></script>
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Satellizer</title>
+  <link href="favicon.png" rel="shortcut icon">
+  <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
+  <link href="/stylesheets/angular-toastr.css" rel="stylesheet">
+  <link href="/stylesheets/styles.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Enigma</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Satellizer</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a href="/#/">Home</a></li>
+    <li ng-if="isAuthenticated()"><a href="/#/profile">Profile</a></li>
+  </ul>
+  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
+    <li><a href="/#/login">Login</a></li>
+    <li><a href="/#/signup">Sign up</a></li>
+  </ul>
+  <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
+    <li><a href="/#/logout">Logout</a></li>
+  </ul>
+</div>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+<div ui-view></div>
 
-  <main role="main" class="container">
+<!-- Third-party Libraries -->
+<script src="/vendor/angular.js"></script>
+<script src="/vendor/angular-animate.js"></script>
+<script src="/vendor/angular-messages.js"></script>
+<script src="/vendor/angular-resource.js"></script>
+<script src="/vendor/angular-sanitize.js"></script>
+<script src="/vendor/angular-ui-router.js"></script>
+<script src="/vendor/angular-toastr.tpls.js"></script>
+<script src="/vendor/satellizer.js"></script>
 
-    <div class="starter-template">
-      <h1>Bootstrap starter template</h1>
-      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-    </div>
-
-  </main><!-- /.container -->
-
-  <div growl></div> <!-- adding the grow directive to html -->
-  <div ui-view class="fade" ></div>
-
-
+<!-- Application Code -->
+<script src="/app.js"></script>
+<script src="/directives/passwordStrength.js"></script>
+<script src="/directives/passwordMatch.js"></script>
+<script src="/controllers/home.js"></script>
+<script src="/controllers/login.js"></script>
+<script src="/controllers/signup.js"></script>
+<script src="/controllers/logout.js"></script>
+<script src="/controllers/project.js"></script>
+<script src="/controllers/navbar.js"></script>
+<script src="/services/account.js"></script>
 </body>
 </html>
