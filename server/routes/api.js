@@ -27,6 +27,7 @@ function getProject(req, res) {
 
 function addProject(req, res) {
   projects.push(req.body.project);
+  // '"{callForTender":{"deadline":"2017-11-11T12:15","offers":[{"sender":"s1","description":"First offer"},{"sender":"s2","description":"Second offer"},{"sender":"s3","description":"3rd offer"}]},"description":"Second project","deadline":"2017-12-30T00:00","affectedTo":"5","state":"Affected","expenses":"255DT Papiers, 4000DT Materiels"},'
   res.json({error: false, data: 'done'});
 }
 
