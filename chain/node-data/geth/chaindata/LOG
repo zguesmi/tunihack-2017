@@ -14,3 +14,5 @@
 09:33:12.560404 version@stat F·[1] S·737B[737B] Sc·[0.25]
 09:33:12.726122 db@janitor F·3 G·0
 09:33:12.726239 db@open done T·536.867388ms
+11:09:35.596214 db@close closing
+11:09:35.596288 db@close done T·72.965µs
