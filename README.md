@@ -3,24 +3,24 @@
 ## Installation:
 
 * `git clone`
-* `cd dir`
+* `cd Tunihack-Hackathon`
 
-## Etherium intallation:
+## Etherium installation:
 
-* Insatallation of [geth the etherium client](https://www.ethereum.org/cli)
+* Installation of [geth the etherium client](https://www.ethereum.org/cli)
 * Execution of init-node shell script `./chain/init-node.sh`
 
 ## Getting the chain ready
 
-* Executio of start-node script `./chain/start-node.sh`
+* Execution of start-node script `./chain/start-node.sh`
 
-## Dependencies of the Node JS wab application
+## Dependencies of the Node JS web application
 
 * `cd server`
 * `npm install`
-* `node app.js`
+* `npm start`
 
 ## AngularJS front end app
 
-* install htt server `sudo npm install http-server -g`
+* install http server `sudo npm install http-server -g`
 * `cd front-end/src`
