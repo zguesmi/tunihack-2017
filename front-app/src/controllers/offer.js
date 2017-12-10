@@ -13,9 +13,18 @@ angular.module('MyApp')
       $scope.loading = false;
       toastr.error(response.data.message);
     });
-
-    //
-
+    $scope.offers = [
+      {
+        sender: 's1',
+        description: 'First offer'
+      }, {
+        sender: 's2',
+        description: 'Second offer'
+      }, {
+        sender: 's3',
+        description: '3rd offer'
+      }
+    ]
     $scope.viewOffer = function(id){
 
     };

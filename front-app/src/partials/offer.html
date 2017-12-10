@@ -1,6 +1,46 @@
 <div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">Offers</div>
-    <div class="panel-body"></div>
-  </div>
+	<div class="panel panel-default">
+		<div class="panel-heading">Offers</div>
+		<div class="panel-body"></div>
+		<div class="well well-sm">
+			<strong>Display</strong>
+			<div class="btn-group">
+				<a id="grid" class="btn btn-default btn-sm">
+					<span class="glyphicon glyphicon-th"></span>
+					All
+				</a>
+				<a id="list" class="btn btn-default btn-sm">
+					<span class="glyphicon glyphicon-glass"></span>
+					Open
+				</a>
+				<a id="grid" class="btn btn-default btn-sm">
+					<span class="glyphicon glyphicon-play"></span>
+					Affected
+				</a>
+				<a id="grid" class="btn btn-default btn-sm">
+					<span class="glyphicon glyphicon-ok-circle"></span>
+					Done
+				</a>
+			</div>
+		</div>
+		<div id="products" class="row list-group">
+			<div class="item  col-xs-4 col-lg-4" ng-repeat="offer in offers">
+				<div class="thumbnail">
+					<div class="caption">
+						<h4 class="group inner list-group-item-heading">
+							<i class=" glyphicon glyphicon-send	"></i>&nbsp; Sender: {{offer.sender}}
+						</h4>
+						<p class="group inner list-group-item-text">&nbsp;
+							<i class=" glyphicon glyphicon-tags	"></i>
+							{{offer.description}}
+						</p>
+						<div class="row">
+							<br>
+						</div>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
