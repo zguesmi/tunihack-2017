@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Satellizer</title>
+  <title>Enigma</title>
   <link href="favicon.png" rel="shortcut icon">
   <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -16,11 +16,11 @@
 <body>
 <div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
   <div class="navbar-header">
-    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Satellizer</a>
+    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Enigma </a>
   </div>
   <ul class="nav navbar-nav">
     <li><a href="/#/">Home</a></li>
-    <li ng-if="isAuthenticated()"><a href="/#/profile">Profile</a></li>
+    <li ng-if="isAuthenticated()"><a href="/#/projects">Projects</a></li>
   </ul>
   <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
     <li><a href="/#/login">Login</a></li>
@@ -52,7 +52,12 @@
 <script src="/controllers/signup.js"></script>
 <script src="/controllers/logout.js"></script>
 <script src="/controllers/project.js"></script>
+<script src="/controllers/offer.js"></script> 
 <script src="/controllers/navbar.js"></script>
 <script src="/services/account.js"></script>
+<script src="/services/project.js"></script>
+<script src="/services/offer.js"></script>
+
+
 </body>
 </html>
