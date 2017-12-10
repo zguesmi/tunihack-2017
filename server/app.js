@@ -4,28 +4,21 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var index = require('./routes/index');
 var api = require('./routes/api');
-// var offers = require('./routes/offers');
+var Web3 = require('web3');
+var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+var deployContract = require('./routes/deployContract');
 
 var app = express();
-
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use(deployContract);
 app.use('/', index);
 app.use('/api', api);
-// app.use('/api/projects/:id/offers', offers);
 
 
 // catch 404 and forward to error handler

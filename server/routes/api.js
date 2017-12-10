@@ -1,7 +1,7 @@
 let router = require('express').Router();
-// let projects = require('./projects')
-// Web3 = require('web3'),
-// web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+Web3 = require('web3'),
+web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+
 
 // GET /api/projects
 router.get('/projects', getProjects);
