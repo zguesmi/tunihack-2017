@@ -1,13 +1,13 @@
-# Tunishack, Etherium based anti fraud application
+# Tunishack, Ethereum based anti fraud application
 
 ## Installation:
 
-* `git clone`
+* `git clone https://github.com/Zied-Guesmi/Tunihack-Hackathon`
 * `cd Tunihack-Hackathon`
 
-## Etherium installation:
+## Ethereum installation:
 
-* Installation of [geth the etherium client](https://www.ethereum.org/cli)
+* Installation of [geth the Ethereum client](https://www.ethereum.org/cli)
 * Execution of init-node shell script `./chain/init-node.sh`
 
 ## Getting the chain ready
@@ -24,3 +24,4 @@
 
 * install http server `sudo npm install http-server -g`
 * `cd front-end/src`
+* `http-server -a localhost -p 5000`
