@@ -2,8 +2,8 @@
 
 ## Installation:
 
-* `git clone https://github.com/Zied-Guesmi/Tunihack-Hackathon`
-* `cd Tunihack-Hackathon`
+* `git clone https://github.com/Zied-Guesmi/tunihack-2017`
+* `cd tunihack-2017`
 
 ## Ethereum installation:
 
