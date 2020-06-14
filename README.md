@@ -1,7 +1,8 @@
-# Tunihack, Open municipalities data application verified with Ethereum 
+# Tunishack, Ethereum based anti fraud application
+
 ## Installation:
 
-* `git clone https://github.com/Ghaith00/tunihack-2018`
+* `git clone https://github.com/Zied-Guesmi/Tunihack-Hackathon`
 * `cd Tunihack-Hackathon`
 
 ## Ethereum installation:
@@ -11,26 +12,16 @@
 
 ## Getting the chain ready
 
-* Execution of start-node script `./chain/up`
+* Execution of start-node script `./chain/start-node.sh`
 
 ## Dependencies of the Node JS web application
 
-* `cd backend`
+* `cd server`
 * `npm install`
 * `npm start`
-### API routes
-  GET '/'                         => just for testing if api is accessible
-  GET '/metadata'                 => get municipalities of each governorate
-  GET '/governorates              => all governorates
-  GET '/governorates/:g_name      => governorate by name
-  GET '/governorates/:g_name/municipalities           => municipalities by governorate
-  GET '/governorates/:g_name/municipalities/:m_name'  => municipality by governorate by name
-  GET '/projects/governorates/:g_name/municipalities/:m_name'  => municipality projects by governorate by name
 
+## AngularJS front end app
 
-
-## React front end app
-
-* install http server `npm install`
-* `cd ui`
-* `npm start`
+* install http server `sudo npm install http-server -g`
+* `cd front-end/src`
+* `http-server -a localhost -p 5000`
